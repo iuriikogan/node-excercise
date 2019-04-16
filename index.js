@@ -8,6 +8,9 @@ const body_parser = require('body-parser')
 app.use(body_parser.json())
 
 const mongoose = require('mongoose')
+mongoose.connect('mongodb://localhost:27107/test_mongo', function() {
+    console.log('Connected to MongoDB');
+})
 
 // testJSON
 var channels = [{
