@@ -4,8 +4,6 @@ const app = express()
 
 const body_parser = require('body-parser')
 
-const db_module = require('/exercises/node-exercise/mongoDB.js')
-
 app.use(body_parser.json())
 
 
@@ -26,27 +24,29 @@ app.get('/file', function (request, respond, next) {
     respond.download(__dirname + '/notes.txt');
 })
 
+            // old way
+// app.get('/channel/:id', function (request, respond, next) {
+//     let channel = channels.find(function (c) {
+//         return c.id == request.params.id;
+//     });
+//     respond.send(channel);
+// })
+// app.post('/channels', function (request, respond, next) {
+//     console.log(request.body);
+//     respond(request.body);
+// })
 
-app.get('/channel/:id', function (request, respond, next) {
-    let channel = channels.find(function (c) {
-        return c.id == request.params.id;
-    });
-    respond.send(channel);
-})
-app.post('/channels', function (request, respond, next) {
-    console.log(request.body);
-    respond(request.body);
-})
+app.get('/channel', require('./controllers/channel-get'))
 
-app.get('/messages/:id', function (request, respond, next) {
-    let message = messages.content.find(function (c) {
-        return c.id == request.params.id;
-    });
-    respond.send(message);
-})
-app.get('/messages', function (request, respond, next) {
-    respond.send(messages);
-})
+// app.get('/messages/:id', function (request, respond, next) {
+//     let message = messages.content.find(function (c) {
+//         return c.id == request.params.id;
+//     });
+//     respond.send(message);
+// })
+// app.get('/messages', function (request, respond, next) {
+//     respond.send(messages);
+// })
      
 
 //keep at the end of the file
