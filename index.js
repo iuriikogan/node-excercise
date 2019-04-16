@@ -42,6 +42,8 @@ app.get('/channel/:name', require('./controllers/channel-get'))
 
 app.post('/channels', require('./controllers/channel-create'))
 
+app.patch('/channel/:name', require('./controllers/channel-update'))
+
 // app.get('/messages/:id', function (request, respond, next) {
 //     let message = messages.content.find(function (c) {
 //         return c.id == request.params.id;
