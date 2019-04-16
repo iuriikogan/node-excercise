@@ -4,9 +4,9 @@ const app = express()
 
 const body_parser = require('body-parser')
 
-const db = require('/exercises/node-exercise/mongoDB.js')
-const db = require('/exercises/node-exercise/module/messages')
-const db = require('/exercises/node-exercise/module/channel')
+const db_module = require('/exercises/node-exercise/mongoDB.js')
+const messages_module = require('/exercises/node-exercise/module/messages')
+const channels_module = require('/exercises/node-exercise/module/channels')
 
 app.use(body_parser.json())
 
