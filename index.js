@@ -4,41 +4,12 @@ const app = express()
 
 const body_parser = require('body-parser')
 
+const db = require('/exercises/node-exercise/mongoDB.js')
+const db = require('/exercises/node-exercise/module/messages')
+const db = require('/exercises/node-exercise/module/channel')
 
 app.use(body_parser.json())
 
-const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost:27107/test_mongo', function() {
-    console.log('Connected to MongoDB');
-})
-
-// testJSON
-var channels = [{
-        id: 1,
-        name: 'General'
-    }, {
-        id: 2,
-        name: 'Random'
-    }, {
-        id: 3,
-        name: 'Private'
-    },
-    {
-        id: 2,
-        name: 'fun'
-    }
-];
-
-
-var messages = [{
-    id: 1,
-    name: "General",
-    content: [{
-        name: "message1",
-        name: "message2",
-        name: "message3"
-    }]
-}];
 
 app.get('/', function (request, respond, next) {
     respond.send('<H1>Hello this is my live Server</H1>');
