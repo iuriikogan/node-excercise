@@ -38,6 +38,10 @@ app.get('/file', function (request, respond, next) {
 
 app.get('/channel', require('./controllers/channel-get'))
 
+app.get('/channel/:name', require('./controllers/channel-get'))
+
+app.post('/channels', require('./controllers/channel-create'))
+
 // app.get('/messages/:id', function (request, respond, next) {
 //     let message = messages.content.find(function (c) {
 //         return c.id == request.params.id;
