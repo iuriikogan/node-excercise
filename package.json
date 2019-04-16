@@ -13,5 +13,14 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "nodemon": "^1.18.11"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iuriikogan/node-excercise.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iuriikogan/node-excercise/issues"
+  },
+  "homepage": "https://github.com/iuriikogan/node-excercise#readme"
 }
